@@ -2,15 +2,14 @@ version: '3.5'
 services:
 #
 # axigen
-  axigen: 
-    image:axigen/axigen:latest
-    restart:unless-stopped
-    container_name:mailserver
+
+  axigen2: 
+    image: axigen/axigen:latest
+    restart: unless-stopped
+    container_name: mailserver
     
     volumes:
       - iredmail-mysql:/var/lib/mysql 
-      - iredmail-vmail:/var/vmail 
-      - iredmail-clamav:/var/lib/clamav
       
     ports: 
       -80:80
