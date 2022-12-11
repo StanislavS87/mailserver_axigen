@@ -3,29 +3,22 @@ services:
 #
 # axigen
 
-  axigen2: 
+
+  axigen:
     image: axigen/axigen
-    restart: unless-stopped
-    container_name: mailserver
-    
-    volumes:
-      - mails: /var/lib/mysql 
+    ports:
+      - 80
+      - 443
+      - 25
+      - 9443
+      - 110
+      - 143
+      - 993
+      - 995
+      - 465
+      - 9000
+      - 7000
       
-    ports: 
-      - 80:80
-      - 443:443
-      - 25:25
-      - 9443:9443
-      - 110:110
-      - 143:143
-      - 993:993
-      - 995:995
-      - 465:465
-      - 9000:9000
-      - 7000:7000
-      
-#
-# VOLUMES
-#
-volumes:
-  mails:
+      volumes:
+      - redis:/axigen/var
+       
