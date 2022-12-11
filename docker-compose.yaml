@@ -4,7 +4,7 @@ services:
 # axigen
   axigen: 
     image:axigen/axigen:latest
-    restart: unless-stopped
+    restart:unless-stopped
     container_name:mailserver
     
     volumes:
