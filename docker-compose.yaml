@@ -1,24 +1,21 @@
-version: '3.5'
+version: '3'
 services:
-#
-# axigen
-
-
   axigen:
-    image: axigen/axigen
+    image: apandiyan/axigen:10.3.1-pc
+    environment:
+      - AXIGEN_PRECONFIGURED=yes
+      - AXIGEN_ADMIN_PASSWORD=unknownadmin
     ports:
-      - 80
-      - 443
-      - 25
-      - 9443
-      - 110
-      - 143
-      - 993
-      - 995
-      - 465
-      - 9000
-      - 7000
-      
-      volumes:
-      - redis:/axigen/var
-       
+      - 9000:9000
+      - 7000:7000
+      - 21:21
+      - 80:80
+      - 25:25
+      - 110:110
+      - 143:143
+    volumes:
+      - axigen_data:/var/opt/axigen
+      - ./axigen_lk.bin_secure:/var/opt/axigen/axigen_lk.bin:ro
+
+volumes:
+  axigen_data:
