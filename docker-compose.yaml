@@ -3,9 +3,9 @@ services:
 #
 # axigen
   axigen: 
-    image: axigen/axigen:latest
+    image:axigen/axigen:latest
     restart: unless-stopped
-    container_name: mailserver
+    container_name:mailserver
     
     volumes:
       - mails:/axigen/var
