@@ -4,12 +4,12 @@ services:
 # axigen
 
   axigen2: 
-    image: axigen/axigen:latest
+    image: axigen/axigen
     restart: unless-stopped
     container_name: mailserver
     
     volumes:
-      - mails:/var/lib/mysql 
+      - mails: /var/lib/mysql 
       
     ports: 
       - 80:80
