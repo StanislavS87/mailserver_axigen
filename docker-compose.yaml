@@ -1,7 +1,7 @@
 version: '3'
 services:
   axigen:
-    image: apandiyan/axigen:10.3.1-pc
+    image: axigen/axigen
     environment:
       - AXIGEN_PRECONFIGURED=yes
       - AXIGEN_ADMIN_PASSWORD=unknownadmin
@@ -14,8 +14,6 @@ services:
       - 110:110
       - 143:143
     volumes:
-      - axigen_data:/var/opt/axigen
-      - ./axigen_lk.bin_secure:/var/opt/axigen/axigen_lk.bin:ro
-
+      - axigen_data:/axigen/var
 volumes:
   axigen_data:
